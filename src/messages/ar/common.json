@@ -1,0 +1,22 @@
+{
+  "Common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "search": "بحث",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "create": "إنشاء",
+    "submit": "إرسال",
+    "yes": "نعم",
+    "no": "لا",
+    "areYouSure": "هل أنت متأكد؟",
+    "member": "عضو"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "Onboarding": {
+    "getStarted": {
+      "title": "Welcome to QuickRelate, {name}!",
+      "description": "Let's set up your professional workspace in a few seconds.",
+      "subscribe": {
+        "badge": "WORKSPACE",
+        "title": "Initialize Your Workspace",
+        "description": "Start organizing your WhatsApp communication with a professional workspace. Centralize your team and manage your customers from one place.",
+        "price": "FREE",
+        "priceDesc": "FOREVER",
+        "button": "Get Started Now",
+        "noCard": "No credit card required"
+      },
+      "join": {
+        "title": "Join an Organization",
+        "description": "I have an invitation code or link from my team.",
+        "button": "Enter Code"
+      }
+    },
+    "createOrg": {
+      "title": "Build Your Workspace",
+      "description": "Establish your organization's digital identity. This will be the home for all your team collaboration and customer conversations.",
+      "nameLabel": "Workspace Name",
+      "namePlaceholder": "e.g., Acme Corporation",
+      "slugLabel": "Workspace URL",
+      "slugPlaceholder": "acme-corp",
+      "slugDescription": "Your unique workspace identifier in QuickRelate.",
+      "slugAvailable": "Workspace URL is available!",
+      "slugTaken": "This URL is already taken. Try another one.",
+      "slugChecking": "Checking availability...",
+      "submit": "Create Workspace",
+      "back": "Back"
+    },
+    "joinOrg": {
+      "title": "Join Your Team",
+      "description": "Enter the invitation code provided by your administrator.",
+      "codeLabel": "Invitation Code",
+      "codePlaceholder": "e.g., ORG-123-ABC",
+      "help": "Your team admin should have sent you an invitation link via email.",
+      "noCode": "Don't have a code? Ask your team admin for an invite.",
+      "submit": "Join Organization",
+      "back": "Back"
+    },
+    "addMembers": {
+      "title": "Invite Your Team",
+      "description": "WhatsApp communication is most effective when shared. Invite your team to collaborate on customer inquiries and manage campaigns together.",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "colleague@company.com",
+      "addAnother": "Add Another",
+      "submit": "Invite Collaborators",
+      "skip": "Skip for Now"
+    },
+    "connectChannel": {
+      "title": "Connect WhatsApp",
+      "description": "Connect your official WhatsApp Business Account to go live. This enables the shared inbox and allows you to start your first outreach campaign.",
+      "connect": "Connect Channel",
+      "configured": "Connection Configured",
+      "skip": "I'll do this later"
+    },
+    "addTemplates": {
+      "title": "Activate Productivity",
+      "description": "Sync your existing WhatsApp templates or explore industry standards to hit the ground running with professional communication.",
+      "syncHelp": "If you successfully connected your WhatsApp account in the previous step, click below to import your templates.",
+      "submit": "Finish Setup",
+      "skip": "Skip"
+    },
+    "wizard": {
+      "finishSuccess": "Setup complete! Welcome to your dashboard."
+    }
+  }
+}
