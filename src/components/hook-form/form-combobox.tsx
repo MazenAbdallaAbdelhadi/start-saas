@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Check, ChevronsUpDown, Search } from "lucide-react";
+import { ControllerProps, FieldPath, FieldValues } from "react-hook-form";
+
 import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -15,17 +18,30 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { RHFField } from "./rhf-field";
 import {
   FieldDescription,
   FieldError,
   FieldLabel,
 } from "@/components/ui/field";
 
-interface FormComboboxProps {
-  name: string;
-  control: any;
-  label?: string;
+import { RHFField } from "./rhf-field";
+
+export type FormControllerProps<
+  TFieldValues extends FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TTransformedValues = TFieldValues,
+> = {
+  name: TName;
+  label: React.ReactNode;
+  description?: React.ReactNode;
+  control: ControllerProps<TFieldValues, TName, TTransformedValues>["control"];
+};
+
+interface FormComboboxProps<
+  TFieldValues extends FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TTransformedValues = TFieldValues,
+> extends FormControllerProps<TFieldValues, TName, TTransformedValues> {
   description?: string;
   placeholder?: string;
   options: { label: string; value: string }[];
@@ -33,7 +49,11 @@ interface FormComboboxProps {
   disabled?: boolean;
 }
 
-export function FormCombobox({
+export function FormCombobox<
+  TFieldValues extends FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TTransformedValues = TFieldValues,
+>({
   name,
   control,
   label,
@@ -42,7 +62,7 @@ export function FormCombobox({
   options,
   emptyMessage = "No items found.",
   disabled = false,
-}: FormComboboxProps) {
+}: FormComboboxProps<TFieldValues, TName, TTransformedValues>) {
   const [open, setOpen] = useState(false);
 
   return (
