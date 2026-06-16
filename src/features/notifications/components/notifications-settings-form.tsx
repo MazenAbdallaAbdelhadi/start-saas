@@ -2,17 +2,22 @@
 
 import { toast } from "sonner";
 import { useTranslations } from "next-intl";
-import { Bell, Smartphone, Monitor, Send, BellOff } from "lucide-react";
+import { Bell, BellOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useTRPC } from "@/trpc/client";
 import { useMutation } from "@tanstack/react-query";
 import { Switch } from "@/components/ui/switch";
 
+import { AppRouter } from "@/trpc/routers/_app";
+import { inferRouterOutputs } from "@trpc/server";
+
+type RouterOutput = inferRouterOutputs<AppRouter>;
+
 export function NotificationsSettingsForm({
   initialSettings,
 }: {
-  initialSettings: any[];
+  initialSettings: RouterOutput["notifications"]["getSettings"];
 }) {
   const t = useTranslations("Settings.notifications.form");
   const [settings, setSettings] = useState(initialSettings);
@@ -31,26 +36,13 @@ export function NotificationsSettingsForm({
     }),
   );
 
-  const sendBroadcastMutation = useMutation(
-    trpc.notifications.sendTestBroadcast.mutationOptions({
-      onSuccess: (result) => {
-        toast.success(t("broadcastSuccessToast", { targets: result.targets }), {
-          description: t("broadcastSuccessToastDescription"),
-        });
-      },
-      onError: () => {
-        toast.error(t("broadcastErrorToast"));
-      },
-    }),
-  );
-
-  const isPending =
-    updateSettingMutation.isPending || sendBroadcastMutation.isPending;
+  const isPending = updateSettingMutation.isPending;
   const [permissionStatus, setPermissionStatus] =
     useState<NotificationPermission | null>(null);
 
   useEffect(() => {
     if ("Notification" in window) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setPermissionStatus(Notification.permission);
     }
   }, []);
@@ -74,30 +66,8 @@ export function NotificationsSettingsForm({
     );
   };
 
-  const handleBroadcastTest = () => {
-    sendBroadcastMutation.mutate(undefined);
-  };
-
   return (
     <div className="space-y-6 pb-20">
-      <div className="flex justify-between items-center bg-primary/5 p-5 rounded-xl border border-primary/20 mb-8 shadow-sm">
-        <div className="space-y-1">
-          <h4 className="font-semibold text-primary text-lg tracking-tight">
-            {t("systemPushTest.title")}
-          </h4>
-          <p className="text-sm text-foreground/80">
-            {t("systemPushTest.description")}
-          </p>
-        </div>
-        <Button
-          onClick={handleBroadcastTest}
-          disabled={isPending}
-          className="shadow-md"
-        >
-          <Send className="w-4 h-4 me-2" />
-          {t("systemPushTest.button")}
-        </Button>
-      </div>
       {permissionStatus !== "granted" && permissionStatus !== null ? (
         <div className="bg-destructive/5 border-destructive/20 border p-8 rounded-xl flex flex-col items-center justify-center text-center space-y-5 shadow-sm">
           <div className="p-4 bg-destructive/10 text-destructive rounded-full">
@@ -146,10 +116,10 @@ export function NotificationsSettingsForm({
                 </div>
                 <div className="flex-1">
                   <h4 className="font-semibold tracking-tight text-lg">
-                    {setting.meta?.label || setting.type}
+                    {setting?.meta?.label || setting.type}
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    {setting.meta?.description}
+                    {setting?.meta?.description}
                   </p>
                 </div>
                 <Switch

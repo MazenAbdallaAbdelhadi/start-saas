@@ -1,7 +1,7 @@
-import { Organization } from "@/generated/prisma/client";
+import { User } from "@/generated/prisma/client";
 
 export type PlanTier = "CORE" | "PLUS" | "PRO" | "SUSPENDED";
-export type Role = "owner" | "admin" | "member";
+export type Role = "user" | "admin";
 
 // Structure of all configurable limits
 export interface PlanEntitlements {
@@ -46,13 +46,13 @@ export function normalizePlan(plan?: string | null): PlanTier {
  * Automatically handles the `-1` (unlimited) bypass.
  */
 export async function isWithinLimit(
-  organization: Organization,
+  user: User,
   currentUsage: number,
   featureKey: keyof (typeof ENTITLEMENTS)["CORE"],
 ): Promise<boolean> {
   const entitlements = {
-    ...ENTITLEMENTS[(organization.plan as PlanTier) || "CORE"],
-    ...(organization.entitlements as object),
+    ...ENTITLEMENTS[(user.plan as PlanTier) || "CORE"],
+    ...(user.entitlements as object),
   };
   const maxLimit = entitlements[featureKey] as number;
 

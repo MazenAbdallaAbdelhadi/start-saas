@@ -9,7 +9,6 @@ import {
 } from "@/constants/routes";
 
 import { getSession } from "@/lib/auth/get-session";
-import prisma from "@/lib/prisma";
 import { routing } from "@/i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
@@ -81,25 +80,6 @@ export async function proxy(request: NextRequest) {
           nextUrl,
         ),
       );
-    }
-
-    // Redirect to onboarding if user is logged in but has no active organization
-    if (isLoggedIn && !session.session?.activeOrganizationId && !isAdmin) {
-      const isOnboarding = pathnameWithoutLocale.startsWith("/onboarding");
-      const isInvite = pathnameWithoutLocale.startsWith("/invite");
-
-      if (!isOnboarding && !isInvite && !isPublicRoute) {
-        // If the user has organizations but none is active, we might want to pick one or let them pick
-        const memberships = await prisma.member.findFirst({
-          where: { userId: session.user.id },
-        });
-
-        if (!memberships) {
-          return NextResponse.redirect(
-            new URL(`${localePrefix}/onboarding`, nextUrl),
-          );
-        }
-      }
     }
 
     // Proceed to next-intl middleware for all other requests

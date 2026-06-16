@@ -28,10 +28,12 @@ model User {
   banReason  String?
   banExpires DateTime?
 
-  twoFactorEnabled Boolean?     @default(false)
+  twoFactorEnabled Boolean?    @default(false)
   twofactors       TwoFactor[]
-  members          Member[]
-  invitations      Invitation[]
+
+  
+  plan         String? @default("CORE")
+  entitlements Json?
 
   // Notifications
   fcmTokens            FcmToken[]
@@ -107,58 +109,6 @@ model TwoFactor {
   @@map("twoFactor")
 }
 
-model Organization {
-  id          String       @id
-  name        String
-  slug        String
-  logo        String?
-  createdAt   DateTime
-  metadata    String?
-  plan        String?  @default("CORE")
-  members     Member[]
-  invitations Invitation[]
-
-  entitlements Json?
-
-  // Notifications
-  notifications    Notification[]
-
-  @@unique([slug])
-  @@map("organization")
-}
-
-model Member {
-  id             String       @id
-  organizationId String
-  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
-  userId         String
-  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  role           String       @default("member")
-  createdAt      DateTime
-
-  @@index([organizationId])
-  @@index([userId])
-  @@map("member")
-}
-
-model Invitation {
-  id             String       @id
-  organizationId String
-  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
-  email          String
-  role           String?
-  status         String       @default("pending")
-  expiresAt      DateTime
-  createdAt      DateTime     @default(now())
-  inviterId      String
-  user           User         @relation(fields: [inviterId], references: [id], onDelete: Cascade)
-
-  @@index([organizationId])
-  @@index([email])
-  @@map("invitation")
-}
-
-
 model NotificationSetting {
   id     String  @id @default(cuid())
   userId String
@@ -173,21 +123,18 @@ model NotificationSetting {
 }
 
 model Notification {
-  id             String        @id @default(cuid())
-  userId         String
-  organizationId String?
-  type           String
-  title          String
-  body           String
-  link           String?
-  isRead         Boolean       @default(false)
-  metadata       Json?
-  createdAt      DateTime      @default(now())
-  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
-  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  title     String
+  body      String
+  link      String?
+  isRead    Boolean  @default(false)
+  metadata  Json?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
-  @@index([organizationId])
   @@map("notification")
 }
 

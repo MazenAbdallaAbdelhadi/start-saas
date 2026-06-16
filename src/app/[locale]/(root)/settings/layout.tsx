@@ -5,7 +5,6 @@ import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
 import {
   BellIcon,
-  Building2Icon,
   ShieldCheck,
   SunMoonIcon,
   UserCircleIcon,
@@ -13,19 +12,10 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { hasPermission, PERMISSIONS } from "@/constants/permissions";
-
-import { authClient } from "@/lib/auth/browser";
 
 export default function SettingsLayout({ children }: PropsWithChildren) {
   const t = useTranslations("Settings.menu");
   const pathname = usePathname();
-  const { data: membership } = authClient.useActiveMember();
-
-  const canViewOrgSettings = hasPermission(
-    membership?.role,
-    PERMISSIONS.VIEW_ORG_SETTINGS,
-  );
 
   const settingsMenu = [
     {
@@ -49,14 +39,6 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
       icon: SunMoonIcon,
     },
   ];
-
-  if (canViewOrgSettings) {
-    settingsMenu.push({
-      label: "Organization",
-      href: "/organization",
-      icon: Building2Icon,
-    });
-  }
 
   return (
     <div className="flex flex-col h-full gap-6 px-2 md:px-4 py-4 md:py-6">

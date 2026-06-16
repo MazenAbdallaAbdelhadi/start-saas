@@ -3,7 +3,6 @@ import {
   SettingsIcon,
   LayoutDashboardIcon,
   Users2Icon,
-  UsersIcon,
   ShieldIcon,
   BuildingIcon,
   MegaphoneIcon,
@@ -20,28 +19,21 @@ import {
 } from "@/components/ui/sidebar";
 
 import { UserSidebarButton } from "@/features/auth";
-import { OrgSwitcher } from "@/features/organizations/components/switcher/org-switcher";
 
 import { authClient } from "@/lib/auth/browser";
 
-import { hasPermission, PERMISSIONS } from "@/constants/permissions";
-
 import { NavMain } from "./nav-main";
+import { Logo } from "../logo";
 
 export const AppSidebar = ({
   ...props
 }: React.ComponentProps<typeof Sidebar>) => {
   const t = useTranslations("Sidebar");
   const { data: session } = authClient.useSession();
-  const { data: membership } = authClient.useActiveMember();
   const locale = useLocale();
 
   const isRTL = isRtlLang(locale);
 
-  const canManageMembers = hasPermission(
-    membership?.role,
-    PERMISSIONS.MANAGE_MEMBERS,
-  );
   const isSysAdmin = session?.user?.role === "admin";
 
   const mainNavData = [
@@ -71,15 +63,6 @@ export const AppSidebar = ({
     },
   ];
 
-  // Only users with manage members permission see the Team management link in settings
-  if (canManageMembers) {
-    settingsItems.unshift({
-      title: t("team"),
-      href: "/members",
-      icon: UsersIcon,
-    });
-  }
-
   const sysAdminItems = [
     {
       title: t("platformUsers"),
@@ -106,7 +89,7 @@ export const AppSidebar = ({
       {...props}
     >
       <SidebarHeader>
-        <OrgSwitcher />
+        <Logo />
       </SidebarHeader>
 
       <SidebarContent>

@@ -1,11 +1,9 @@
 import { z } from "zod";
 import { baseProcedure, createTRPCRouter } from "../init";
 
-import { organizationsRouter } from "@/features/organizations/server/router";
 import { notificationsRouter } from "@/features/notifications/server/router";
 
 export const appRouter = createTRPCRouter({
-  organizations: organizationsRouter,
   notifications: notificationsRouter,
 
   /**

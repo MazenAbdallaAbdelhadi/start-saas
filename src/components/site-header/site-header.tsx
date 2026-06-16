@@ -1,12 +1,8 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
-import { Suspense } from "react";
 
 import { AppBreadcrumb } from "../app-breadcrumb";
-import {
-  SiteOrganizationMembers,
-  SiteOrganizationMembersSkeleton,
-} from "./site-organization-members";
+
 import { SiteHeaderNotifications } from "./site-header-notifications";
 
 export const SiteHeader = () => {
@@ -19,9 +15,6 @@ export const SiteHeader = () => {
         <AppBreadcrumb />
 
         <div className="ms-auto flex items-center ps-1 h-full gap-1">
-          <Suspense fallback={<SiteOrganizationMembersSkeleton />}>
-            <SiteOrganizationMembers />
-          </Suspense>
           <Separator orientation="vertical" className="h-6 mx-2" />
           <SiteHeaderNotifications />
         </div>

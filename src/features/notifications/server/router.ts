@@ -1,9 +1,5 @@
 import { z } from "zod";
-import {
-  createTRPCRouter,
-  protectedProcedure,
-  organizationProcedure,
-} from "@/trpc/init";
+import { createTRPCRouter, protectedProcedure } from "@/trpc/init";
 import prisma from "@/lib/prisma";
 import { NOTIFICATION_TYPES } from "@/constants/notifications";
 import { PAGINATION } from "@/constants/pagination";
@@ -214,28 +210,7 @@ export const notificationsRouter = createTRPCRouter({
     return { success: true };
   }),
 
-  // TODO: remove in the future, this is just for testing the FCM broadcast system
-  sendTestBroadcast: organizationProcedure.mutation(async ({ ctx }) => {
-    const activeOrgId = ctx.organizationId;
-
-    // Get all org members
-    const members = await prisma.member.findMany({
-      where: { organizationId: activeOrgId },
-      select: { userId: true },
-    });
-    return dispatchNotification({
-      organizationId: activeOrgId,
-      targetUserIds: members.map((m) => m.userId),
-      payload: {
-        title: "System Broadcast 🚀",
-        body: "This is a live test notification from your workspace! If you are seeing this, the background worker and Web Push FCM layer are operating flawlessly.",
-        type: "SYSTEM_ALERT",
-        link: "/notifications",
-      },
-    });
-  }),
-
-  dispatch: organizationProcedure
+  dispatch: protectedProcedure
     .input(
       z.object({
         targetUserIds: z.array(z.string()).min(1),
@@ -249,7 +224,6 @@ export const notificationsRouter = createTRPCRouter({
     )
     .mutation(async ({ ctx, input }) => {
       return dispatchNotification({
-        organizationId: ctx.organizationId,
         targetUserIds: input.targetUserIds,
         payload: input.notification,
       });

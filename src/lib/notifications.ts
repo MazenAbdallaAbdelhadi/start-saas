@@ -4,7 +4,6 @@ import prisma from "@/lib/prisma";
 import { messaging } from "@/lib/firebase/messaging";
 
 type NotifyUsersParams = {
-  organizationId: string;
   targetUserIds: string[];
   payload: NotificationPayload;
 };
@@ -15,30 +14,10 @@ type NotifyUsersParams = {
  * and securely fires Web Push FCM requests if enabled.
  */
 export async function dispatchNotification({
-  organizationId,
   targetUserIds,
   payload,
 }: NotifyUsersParams) {
   if (targetUserIds.length === 0) return { success: true, targets: 0 };
-
-  // Handle special case for system-wide notifications
-  const isSystemWide = organizationId === "GLOBAL_PLATFORM";
-  let effectiveOrganizationId: string | null = organizationId;
-
-  if (!isSystemWide) {
-    // Validate that the organization exists for non-system notifications
-    const organization = await prisma.organization.findUnique({
-      where: { id: organizationId },
-      select: { id: true },
-    });
-
-    if (!organization) {
-      throw new Error(`Organization with ID ${organizationId} does not exist`);
-    }
-  } else {
-    // For system-wide notifications, set organizationId to null
-    effectiveOrganizationId = null;
-  }
 
   // 1. Resolve user preferences
   const settings = await prisma.notificationSetting.findMany({
@@ -62,7 +41,6 @@ export async function dispatchNotification({
   if (inAppUserIds.length > 0) {
     const dbNotifications = inAppUserIds.map((userId) => ({
       userId,
-      organizationId: effectiveOrganizationId,
       title: payload.title,
       body: payload.body,
       type: payload.type,
