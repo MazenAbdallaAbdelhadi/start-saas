@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
 import {
+  BellIcon,
   Building2Icon,
   ShieldCheck,
   SunMoonIcon,
@@ -36,6 +37,11 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
       label: t("security"),
       href: "/security",
       icon: ShieldCheck,
+    },
+    {
+      label: t("notifications"),
+      href: "/notifications",
+      icon: BellIcon,
     },
     {
       label: t("theme"),
