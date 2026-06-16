@@ -13,6 +13,7 @@
     "viewAllTeamMembers": "View all team members",
     "collaboratorCount": "{count, plural, one {# Collaborator} other {# Collaborators}} in total",
     "owner": "Owner",
-    "admin": "Admin"
+    "admin": "Admin",
+    "member": "Member"
   }
 }

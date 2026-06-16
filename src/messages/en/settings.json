@@ -171,7 +171,9 @@
         "owner": "Owner",
         "admin": "Admin",
         "member": "Member"
-      }
+      },
+      "copy": "Copy",
+      "copyFailed": "Failed to copy link"
     },
     "theme": {
       "title": "Theme Configuration",

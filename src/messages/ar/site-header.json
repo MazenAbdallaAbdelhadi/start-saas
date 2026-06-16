@@ -13,6 +13,7 @@
     "viewAllTeamMembers": "مشاهدة جميع أعضاء الفريق",
     "collaboratorCount": "{count, plural, zero {لا يوجد مساهمين} one {مساهم واحد} two {مساهمان} few {# مساهمين} many {# مساهمًا} other {# مساهم}} في المجمل",
     "owner": "مالك",
-    "admin": "مسؤول"
+    "admin": "مسؤول",
+    "member": "عضو"
   }
 }

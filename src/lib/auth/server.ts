@@ -13,12 +13,49 @@ import {
 } from "better-auth/plugins/organization";
 
 import prisma from "@/lib/prisma";
+
+import { sendDeleteAccountVerificationEmail } from "@/lib/mail/delete-account-verification-email";
+import { sendOrganizationInviteEmail } from "@/lib/mail/organization-invite-email";
+import { sendEmailVerificationEmail } from "@/lib/mail/verification-email";
+import { sendPasswordResetEmail } from "@/lib/mail/password-reset-email";
+
 import { canAddMember } from "@/features/organizations/server/service";
 
 export const auth = betterAuth({
   database: prismaAdapter(prisma, { provider: "postgresql" }),
 
-  emailAndPassword: { enabled: true },
+  user: {
+    changeEmail: {
+      enabled: true,
+      sendChangeEmailConfirmation: async ({ user, url, newEmail }) => {
+        await sendEmailVerificationEmail({
+          user: { ...user, email: newEmail },
+          url,
+        });
+      },
+    },
+    deleteUser: {
+      enabled: true,
+      sendDeleteAccountVerification: async ({ user, url }) => {
+        await sendDeleteAccountVerificationEmail({ user, url });
+      },
+    },
+  },
+
+  emailAndPassword: {
+    enabled: true,
+    sendResetPassword: async ({ user, url }) => {
+      await sendPasswordResetEmail({ user, url });
+    },
+  },
+
+  emailVerification: {
+    autoSignInAfterVerification: true,
+    sendOnSignUp: true,
+    sendVerificationEmail: async ({ user, url }) => {
+      await sendEmailVerificationEmail({ user, url });
+    },
+  },
 
   socialProviders: {
     google: {
@@ -38,10 +75,25 @@ export const auth = betterAuth({
     twoFactor(),
     admin({ defaultRole: "user" }),
     organization({
+      sendInvitationEmail: async ({
+        email,
+        organization,
+        inviter,
+        invitation,
+      }) => {
+        await sendOrganizationInviteEmail({
+          invitation,
+          inviter: inviter.user,
+          organization,
+          email,
+        });
+      },
+
       allowUserToCreateOrganization: async () => {
         // Temporarily allow creation to unblock user and see logs
         return true;
       },
+
       schema: {
         organization: {
           additionalFields: {
@@ -57,6 +109,7 @@ export const auth = betterAuth({
           },
         },
       },
+
       organizationHooks: {
         async afterCreateOrganization({ organization: org }) {
           /**

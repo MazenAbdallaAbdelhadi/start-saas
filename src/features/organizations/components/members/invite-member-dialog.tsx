@@ -91,7 +91,7 @@ export const InviteMemberDialog = ({
     if (!invitationLink) return;
     try {
       await navigator.clipboard.writeText(invitationLink);
-      toast.success(t("linkCopied"));
+      toast.success(t("copyLinkToast"));
     } catch (err) {
       toast.error(t("copyFailed"));
     }
