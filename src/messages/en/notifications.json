@@ -1,0 +1,70 @@
+{
+  "Notifications": {
+    "page": {
+      "title": "Inbox Notifications",
+      "description": "Stay updated with your latest alerts and messages across your workspace."
+    },
+    "list": {
+      "tabs": {
+        "all": "All Notifications",
+        "unread": "Unread"
+      },
+      "views": {
+        "timeline": "Timeline View",
+        "category": "Category View"
+      },
+      "actions": {
+        "markAllRead": "Mark all read",
+        "markAsRead": "Mark as read"
+      },
+      "states": {
+        "loading": "Loading notifications...",
+        "emptyTitle": "You're all caught up!",
+        "emptyDesc": "When you have any new alerts or messages, they will appear here.",
+        "allCaughtUp": "All caught up!"
+      },
+      "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "pageInfo": "Page {page} of {totalPages}"
+      },
+      "grouping": {
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "last7Days": "Last 7 Days",
+        "last30Days": "Last 30 Days",
+        "older": "Older",
+        "otherUpdates": "Other Updates"
+      },
+      "types": {
+        "WHATSAPP_MESSAGE": {
+          "label": "New WhatsApp Messages",
+          "description": "When a customer sends a new message"
+        },
+        "SYSTEM_ALERT": {
+          "label": "System Alerts",
+          "description": "Important platform updates and alerts"
+        },
+        "LEAD_UPDATE": {
+          "label": "Lead Updates",
+          "description": "When a lead status changes"
+        },
+        "TEAM_MENTION": {
+          "label": "Team Mentions",
+          "description": "When you are mentioned in an internal note"
+        },
+        "CAMPAIGN_COMPLETED": {
+          "label": "Campaign Completed",
+          "description": "When a campaign finishes sending"
+        },
+        "CAMPAIGN_FAILED": {
+          "label": "Campaign Failed",
+          "description": "When a campaign encounters errors during sending"
+        }
+      },
+      "errors": {
+        "markReadFailed": "Failed to mark notification as read"
+      }
+    }
+  }
+}

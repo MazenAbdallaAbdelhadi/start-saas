@@ -7,7 +7,7 @@ import {
   SiteOrganizationMembers,
   SiteOrganizationMembersSkeleton,
 } from "./site-organization-members";
-// import { SiteHeaderNotifications } from "./site-header-notifications";
+import { SiteHeaderNotifications } from "./site-header-notifications";
 
 export const SiteHeader = () => {
   return (
@@ -22,8 +22,8 @@ export const SiteHeader = () => {
           <Suspense fallback={<SiteOrganizationMembersSkeleton />}>
             <SiteOrganizationMembers />
           </Suspense>
-          {/* <Separator orientation="vertical" className="h-6 mx-2" />
-          <SiteHeaderNotifications /> */}
+          <Separator orientation="vertical" className="h-6 mx-2" />
+          <SiteHeaderNotifications />
         </div>
       </div>
     </header>

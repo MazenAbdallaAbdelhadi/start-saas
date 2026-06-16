@@ -1,0 +1,70 @@
+{
+  "Notifications": {
+    "page": {
+      "title": "إشعارات صندوق الوارد",
+      "description": "ابقَ على اطلاع بأحدث التنبيهات والرسائل عبر مساحة عملك."
+    },
+    "list": {
+      "tabs": {
+        "all": "جميع الإشعارات",
+        "unread": "غير المقروءة"
+      },
+      "views": {
+        "timeline": "عرض المخطط الزمني",
+        "category": "عرض الفئات"
+      },
+      "actions": {
+        "markAllRead": "تحديد الكل كمقروء",
+        "markAsRead": "تحديد كمقروء"
+      },
+      "states": {
+        "loading": "جاري تحميل الإشعارات...",
+        "emptyTitle": "أنت مطلع على كل شيء!",
+        "emptyDesc": "عندما تصلك أي تنبيهات أو رسائل جديدة، ستظهر هنا.",
+        "allCaughtUp": "تمت قراءة كل شيء!"
+      },
+      "pagination": {
+        "previous": "السابق",
+        "next": "التالي",
+        "pageInfo": "صفحة {page} من {totalPages}"
+      },
+      "grouping": {
+        "today": "اليوم",
+        "yesterday": "أمس",
+        "last7Days": "آخر 7 أيام",
+        "last30Days": "آخر 30 يوماً",
+        "older": "أقدم",
+        "otherUpdates": "تحديثات أخرى"
+      },
+      "types": {
+        "WHATSAPP_MESSAGE": {
+          "label": "رسائل واتساب جديدة",
+          "description": "عندما يرسل عميل رسالة جديدة"
+        },
+        "SYSTEM_ALERT": {
+          "label": "تنبيهات النظام",
+          "description": "تحديثات وتنبيهات المنصة الهامة"
+        },
+        "LEAD_UPDATE": {
+          "label": "تحديثات العميل المحتمل",
+          "description": "عندما تتغير حالة العميل المحتمل"
+        },
+        "TEAM_MENTION": {
+          "label": "إشارات الفريق",
+          "description": "عندما تتم الإشارة إليك في ملاحظة داخلية"
+        },
+        "CAMPAIGN_COMPLETED": {
+          "label": "اكتملت الحملة",
+          "description": "عندما تنتهي الحملة من الإرسال"
+        },
+        "CAMPAIGN_FAILED": {
+          "label": "فشلت الحملة",
+          "description": "عندما تواجه الحملة أخطاء أثناء الإرسال"
+        }
+      },
+      "errors": {
+        "markReadFailed": "فشل تحديد الإشعار كمقروء"
+      }
+    }
+  }
+}

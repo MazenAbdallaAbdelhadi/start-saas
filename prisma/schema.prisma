@@ -33,6 +33,12 @@ model User {
   members          Member[]
   invitations      Invitation[]
 
+  // Notifications
+  fcmTokens            FcmToken[]
+  notifications        Notification[]
+  notificationSettings NotificationSetting[]
+
+
   @@map("user")
 }
 
@@ -114,6 +120,9 @@ model Organization {
 
   entitlements Json?
 
+  // Notifications
+  notifications    Notification[]
+
   @@unique([slug])
   @@map("organization")
 }
@@ -147,4 +156,50 @@ model Invitation {
   @@index([organizationId])
   @@index([email])
   @@map("invitation")
+}
+
+
+model NotificationSetting {
+  id     String  @id @default(cuid())
+  userId String
+  type   String
+  inApp  Boolean @default(true)
+  push   Boolean @default(true)
+  email  Boolean @default(false)
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, type])
+  @@map("notification_setting")
+}
+
+model Notification {
+  id             String        @id @default(cuid())
+  userId         String
+  organizationId String?
+  type           String
+  title          String
+  body           String
+  link           String?
+  isRead         Boolean       @default(false)
+  metadata       Json?
+  createdAt      DateTime      @default(now())
+  organization   Organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([organizationId])
+  @@map("notification")
+}
+
+model FcmToken {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  device    String?
+  createdAt DateTime @default(now())
+  lastUsed  DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("fcm_token")
 }

@@ -1,6 +1,8 @@
-import { auth } from "@/lib/auth/server";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
+
+import { auth } from "@/lib/auth/server";
+import prisma from "@/lib/prisma";
 
 /**
  * This context creator accepts `headers` so it can be reused in both
@@ -9,7 +11,8 @@ import superjson from "superjson";
  */
 export const createTRPCContext = async (opts: { headers: Headers }) => {
   const session = await auth.api.getSession({ headers: opts.headers });
-  return { session };
+
+  return { ...session };
 };
 
 // Avoid exporting the entire t-object
@@ -41,5 +44,41 @@ export const protectedProcedure = baseProcedure.use(async ({ ctx, next }) => {
     });
   }
 
-  return next({ ctx });
+  return next({ ctx: { session: ctx.session, user: ctx.user! } });
 });
+
+/**
+ * Organization procedure — requires an authenticated session AND an active organization.
+ */
+export const organizationProcedure = protectedProcedure.use(
+  async ({ ctx, next }) => {
+    if (!ctx.session.activeOrganizationId) {
+      throw new TRPCError({
+        code: "FORBIDDEN",
+        message: "An active organization is required to perform this action.",
+      });
+    }
+
+    const member = await prisma.member.findFirst({
+      where: {
+        userId: ctx.user.id,
+        organizationId: ctx.session.activeOrganizationId,
+      },
+    });
+
+    if (!member) {
+      throw new TRPCError({
+        code: "FORBIDDEN",
+        message: "You are not a member of this organization.",
+      });
+    }
+
+    return next({
+      ctx: {
+        ...ctx,
+        organizationId: ctx.session.activeOrganizationId,
+        member,
+      },
+    });
+  },
+);
