@@ -1,0 +1,18 @@
+{
+  "SiteHeader": {
+    "notifications": "Notifications",
+    "new": "{count} new",
+    "markAllRead": "Mark all read",
+    "dateTab": "Date",
+    "categoryTab": "Category",
+    "emptyTitle": "You're all caught up!",
+    "emptyBody": "No new alerts or messages.",
+    "viewAll": "View all notifications",
+    "teamRoster": "Team Roster",
+    "teamRosterCaption": "Behold everyone currently collaborating in this organization.",
+    "viewAllTeamMembers": "View all team members",
+    "collaboratorCount": "{count, plural, one {# Collaborator} other {# Collaborators}} in total",
+    "owner": "Owner",
+    "admin": "Admin"
+  }
+}

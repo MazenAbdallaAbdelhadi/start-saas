@@ -1,0 +1,28 @@
+{
+  "Sidebar": {
+    "mainMenu": "Main Menu",
+    "settingsGroup": "Settings",
+    "sysAdminControl": "SysAdmin Control",
+    "dashboard": "Dashboard",
+    "inbox": "Inbox",
+    "contacts": "Contacts",
+    "campaigns": "Campaigns",
+    "reports": "Reports",
+    "templates": "Templates",
+    "autoReplies": "Auto-Replies",
+    "channels": "Channels",
+    "settings": "Settings",
+    "feedbackSupport": "Feedback & Support",
+    "team": "Team",
+    "platformUsers": "Platform Users",
+    "workspaces": "Workspaces",
+    "broadcasts": "Broadcasts",
+    "organizations": "Organizations",
+    "subscribeToWorkspace": "Subscribe to Workspace",
+    "organizationSettings": "Organization Settings",
+    "profile": "Profile",
+    "billing": "Billing",
+    "notifications": "Notifications",
+    "logOut": "Log out"
+  }
+}

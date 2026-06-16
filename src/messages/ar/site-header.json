@@ -1,0 +1,18 @@
+{
+  "SiteHeader": {
+    "notifications": "الإشعارات",
+    "new": "{count} جديد",
+    "markAllRead": "تمييز الكل كمقروء",
+    "dateTab": "التاريخ",
+    "categoryTab": "الفئة",
+    "emptyTitle": "أنت متابع لكل شيء!",
+    "emptyBody": "لا توجد تنبيهات أو رسائل جديدة.",
+    "viewAll": "عرض كل الإشعارات",
+    "teamRoster": "قائمة الفريق",
+    "teamRosterCaption": "شاهد جميع المساهمين حالياً في هذه المنظمة.",
+    "viewAllTeamMembers": "مشاهدة جميع أعضاء الفريق",
+    "collaboratorCount": "{count, plural, zero {لا يوجد مساهمين} one {مساهم واحد} two {مساهمان} few {# مساهمين} many {# مساهمًا} other {# مساهم}} في المجمل",
+    "owner": "مالك",
+    "admin": "مسؤول"
+  }
+}

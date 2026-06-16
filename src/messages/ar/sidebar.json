@@ -1,0 +1,28 @@
+{
+  "Sidebar": {
+    "mainMenu": "القائمة الرئيسية",
+    "settingsGroup": "الإعدادات",
+    "sysAdminControl": "تحكم مسؤول النظام",
+    "dashboard": "لوحة التحكم",
+    "inbox": "البريد الوارد",
+    "contacts": "جهات الاتصال",
+    "campaigns": "الحملات",
+    "reports": "التقارير",
+    "templates": "القوالب",
+    "autoReplies": "الردود التلقائية",
+    "channels": "القنوات",
+    "settings": "الإعدادات",
+    "feedbackSupport": "الدعم والملاحظات",
+    "team": "الفريق",
+    "platformUsers": "مستخدمو المنصة",
+    "workspaces": "مساحات العمل",
+    "broadcasts": "عمليات البث",
+    "organizations": "المنظمات",
+    "subscribeToWorkspace": "الاشتراك في مساحة عمل",
+    "organizationSettings": "إعدادات المنظمة",
+    "profile": "الملف الشخصي",
+    "billing": "الفواتير",
+    "notifications": "الإشعارات",
+    "logOut": "تسجيل الخروج"
+  }
+}

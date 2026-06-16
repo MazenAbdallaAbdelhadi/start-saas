@@ -1,0 +1,270 @@
+{
+  "Settings": {
+    "menu": {
+      "profile": "الملف الشخصي",
+      "security": "الأمان",
+      "notifications": "الإشعارات",
+      "theme": "السمة",
+      "organization": "المنظمة"
+    },
+    "profile": {
+      "title": "الملف الشخصي",
+      "description": "قم بتحديث بيانات ملفك الشخصي",
+      "form": {
+        "fullNameLabel": "الاسم الكامل",
+        "fullNamePlaceholder": "Joe Doe",
+        "emailLabel": "البريد الإلكتروني",
+        "emailPlaceholder": "domain@email.com",
+        "submitButton": "تحديث الملف الشخصي",
+        "updateErrorToast": "فشل تحديث الملف الشخصي",
+        "emailUpdateErrorToast": "فشل تحديث بريدك الإلكتروني"
+      },
+      "accounts": {
+        "title": "الحسابات",
+        "description": "قم بإدارة جميع حساباتك"
+      }
+    },
+    "security": {
+      "twoFactor": {
+        "title": "المصادقة الثنائية",
+        "enabled": "مفعل",
+        "disabled": "معطل",
+        "form": {
+          "passwordLabel": "كلمة المرور",
+          "passwordPlaceholder": "••••••••••",
+          "disableButton": "تعطيل المصادقة الثنائية",
+          "enableButton": "تفعيل المصادقة الثنائية",
+          "disableError": "فشل تعطيل المصادقة الثنائية",
+          "disableSuccess": "تم تعطيل المصادقة الثنائية",
+          "enableError": "فشل تفعيل المصادقة الثنائية",
+          "verifyError": "فشل التحقق من الرمز",
+          "qrDescription": "امسح رمز QR هذا بتطبيق المصادقة وأدخل الرمز أدناه:",
+          "codeLabel": "الرمز",
+          "submitCodeButton": "إرسال الرمز",
+          "backupCodesDescription": "احفظ رموز النسخ الاحتياطي هذه في مكان آمن. يمكنك استخدامها للوصول إلى حسابك.",
+          "doneButton": "تم"
+        }
+      },
+      "sessions": {
+        "title": "الجلسات",
+        "description": "قم بإدارة جميع جلساتك",
+        "otherActiveSessionsTitle": "الجلسات النشطة الأخرى",
+        "revokeAllButton": "إلغاء جميع الجلسات الأخرى",
+        "revokeSuccessToast": "تم إلغاء الجلسات الأخرى بنجاح",
+        "noOtherSessions": "لا توجد جلسات نشطة أخرى",
+        "unknownDevice": "جهاز غير معروف",
+        "currentSession": "الجلسة الحالية",
+        "created": "تم الإنشاء:",
+        "expires": "تنتهي:",
+        "revokeSessionToast": "تم إلغاء الجلسة"
+      },
+      "changePassword": {
+        "title": "تغيير كلمة المرور",
+        "description": "قم بتحديث كلمة مرورك لتحسين الأمان.",
+        "form": {
+          "currentPasswordLabel": "كلمة المرور الحالية",
+          "currentPasswordPlaceholder": "••••••••••",
+          "newPasswordLabel": "كلمة المرور الجديدة",
+          "newPasswordPlaceholder": "••••••••••",
+          "newPasswordConfirmLabel": "تأكيد كلمة المرور الجديدة",
+          "newPasswordConfirmPlaceholder": "••••••••••",
+          "revokeOtherSessionsLabel": "تسجيل الخروج من الجلسات الأخرى",
+          "submitButton": "تغيير كلمة المرور",
+          "loadingToast": "جارٍ تغيير كلمة المرور...",
+          "errorToast": "فشل تغيير كلمة المرور",
+          "successToast": "تم تغيير كلمة المرور بنجاح"
+        }
+      },
+      "dangerZone": {
+        "title": "منطقة الخطر",
+        "description": "جميع الإجراءات في هذا القسم لا يمكن التراجع عنها",
+        "deleteProfile": {
+          "title": "حذف الملف الشخصي",
+          "description": "حذف بيانات ملفك الشخصي بشكل دائم",
+          "button": "حذف",
+          "confirmTitle": "حذف الحساب",
+          "confirmText": "حذف"
+        }
+      }
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "description": "قم بتكوين كيفية تلقي الإشعارات والتنبيهات عبر قنوات متعددة.",
+      "form": {
+        "successToast": "تم تحديث التفضيلات",
+        "successToastDescription": "تم حفظ إعدادات الإشعارات الخاصة بك.",
+        "updateErrorToast": "فشل تحديث إعدادات الإشعارات",
+        "broadcastSuccessToast": "تم تشغيل اختبار البث لـ {targets} مستخدمين!",
+        "broadcastSuccessToastDescription": "إذا تم إعداد Firebase، يتم الآن إرسال إشعارات الدفع.",
+        "broadcastErrorToast": "فشل بث الإشعار.",
+        "systemPushTest": {
+          "title": "اختبار دفع النظام",
+          "description": "أرسل إشعار اختبار مباشر إلى جميع المستخدمين في مساحة العمل الحالية.",
+          "button": "اختبار البث"
+        },
+        "permissionDisabled": {
+          "title": "الإشعارات معطلة",
+          "description": "لتلقي التنبيهات داخل التطبيق وإشعارات الخلفية، يجب منح إذن في المتصفح."
+        },
+        "permissionDeniedToast": "تم رفض الإذن",
+        "permissionDeniedDescription": "يجب إلغاء حظر الإشعارات في إعدادات المتصفح.",
+        "enableNotificationsButton": "تفعيل الإشعارات"
+      }
+    },
+    "members": {
+      "title": "إدارة الفريق",
+      "description": "قم بإدارة فريق المنظمة والأدوار والتعامل مع الدعوات.",
+      "activeMembers": "الأعضاء النشطون",
+      "pendingInvitations": "الدعوات المعلقة",
+      "member": "العضو",
+      "role": "الدور",
+      "status": "الحالة",
+      "actions": "الإجراءات",
+      "recipient": "المستلم",
+      "assignedRole": "الدور المخصص",
+      "manage": "إدارة",
+      "you": "(أنت)",
+      "active": "نشط",
+      "pending": "معلق",
+      "protected": "محمي",
+      "memberSettings": "إعدادات العضو",
+      "changeRole": "تغيير الدور",
+      "removeMember": "إزالة العضو",
+      "copyLink": "نسخ الرابط",
+      "cancel": "إلغاء",
+      "orgStatistics": "إحصائيات المنظمة",
+      "plan": "الخطة",
+      "upgradeWorkspace": "ترقية مساحة العمل",
+      "proTip": "نصيحة احترافية 💡",
+      "proTipDescription": "دعوة الأعضاء مباشرة كمسؤولين يمنحهم الإذن للتعامل مع الفواتير وإضافة أعضاء آخرين.",
+      "seatUsage": "استخدام المقاعد",
+      "seatsRemaining": "مقاعد متبقية",
+      "seatRemaining": "مقعد متبقي",
+      "organizationFull": "المنظمة ممتلئة. قم بالترقية لإضافة المزيد من الأعضاء.",
+      "inviteMember": "دعوة عضو",
+      "inviteTeamMember": "دعوة عضو الفريق",
+      "inviteDescription": "نمِ فريقك وتعاون على المشاريع معاً.",
+      "emailAddress": "عنوان البريد الإلكتروني",
+      "emailPlaceholder": "colleague@company.com",
+      "emailDescription": "سيتلقون تفاصيل الدعوة في الخطوة التالية.",
+      "accountRole": "دور الحساب",
+      "selectRole": "اختر دوراً...",
+      "roleDescription": "يمكن للمسؤولين إدارة أعضاء الفريق والفواتير، لكنهم لا يمكنهم حذف المنظمة. لدى الأعضاء وصول قياسي للأدوات والبيانات.",
+      "permissionsNote": "ملاحظة حول الأذونات",
+      "permissionsDescription": "قم بتكوين ما يمكن لهذا العضو الوصول إليه داخل المنظمة.",
+      "sendInvitation": "إرسال الدعوة",
+      "sendInvite": "إرسال دعوة",
+      "invitationReady": "الدعوة جاهزة!",
+      "invitationReadyDescription": "انسخ وأرسل هذا الرابط إلى",
+      "linkExpires": "سينتهي هذا الرابط خلال 48 ساعة لأغراض الأمان.",
+      "done": "تم",
+      "copyLinkToast": "تم نسخ رابط الدعوة إلى الحافظة!",
+      "copyLinkError": "فشل نسخ الرابط",
+      "cancelInvitation": "إلغاء الدعوة",
+      "cancelInvitationConfirm": "إلغاء الدعوة؟",
+      "cancelInvitationDescription": "سيؤدي هذا إلى إبطال الرابط المرسل إلى",
+      "removeMemberConfirm": "إزالة",
+      "removeMemberDescription": "سيؤدي هذا إلى إزالة",
+      "fromOrganization": "من المنظمة بشكل دائم. سيفقدون الوصول فوراً.",
+      "confirmRemoveMember": "إزالة العضو",
+      "roles": {
+        "owner": "المالك",
+        "admin": "المدير",
+        "member": "العضو"
+      }
+    },
+    "theme": {
+      "title": "تكوين السمة",
+      "description": "اختر السمة المفضلة لديك"
+    },
+    "organization": {
+      "generalTitle": "الإعدادات العامة",
+      "generalDescription": "قم بإدارة هوية مساحة العمل والتكوين الأساسي.",
+      "organizationIdLabel": "معرّف المنظمة:",
+      "form": {
+        "generalInfoTitle": "المعلومات العامة",
+        "generalInfoDescription": "خصص اسم المنظمة والظهور.",
+        "organizationNameLabel": "اسم المنظمة",
+        "organizationSlugLabel": "رابط المنظمة",
+        "organizationSlugDescription": "لا يمكن تغيير الروابط في الوقت الحالي.",
+        "organizationLogoTitle": "شعار مساحة العمل",
+        "organizationLogoSectionTitle": "شعار المنظمة",
+        "organizationLogoDescription": "يتم استخدام الصور الرمزية المستندة إلى الحروف الأولى افتراضياً.",
+        "uploadLogoButton": "تحميل شعار مخصص (قريباً)",
+        "cancelButton": "إلغاء",
+        "saveChangesButton": "حفظ التغييرات"
+      },
+      "dangerZone": {
+        "title": "منطقة الخطر",
+        "description": "هذه الإجراءات غير قابلة للعكس وستؤثر على منظمتك.",
+        "archiveToast": "قادم قريباً: أرشفة المنظمة",
+        "archive": {
+          "title": "أرشفة المنظمة",
+          "description": "سيؤدي الأرشفة إلى تعطيل الوصول إلى هذه المنظمة وجميع بياناتها. يمكن عكس هذا الإجراء عن طريق الاتصال بالدعم.",
+          "button": "أرشفة المنظمة"
+        },
+        "delete": {
+          "title": "حذف المنظمة",
+          "description": "سيؤدي هذا إلى حذف منظمتك وجميع بياناتها بشكل دائم. لا يمكن التراجع عن هذا الإجراء.",
+          "button": "حذف المنظمة",
+          "confirmTitle": "حذف المنظمة",
+          "confirmDescription": "حذف",
+          "cancelText": "إلغاء",
+          "confirmText": "حذف"
+        }
+      }
+    },
+    "billing": {
+      "title": "الفواتير والاشتراك",
+      "description": "إدارة خطتك، واستخدامك، وسجل الفواتير.",
+      "overview": "نظرة عامة على الاشتراك",
+      "status": {
+        "trial": "تجريبي",
+        "active": "نشط",
+        "expired": "منتهي",
+        "cancelled": "ملغي",
+        "suspended": "معلق"
+      },
+      "planDetails": "مساحة العمل الخاصة بك حالياً في فئة {plan}.",
+      "renewal": "التجديد القادم",
+      "monthly": "شهرياً",
+      "trialRemaining": "متبقي {days} يوم في الفترة التجريبية",
+      "usage": {
+        "title": "استخدام البث الشهري",
+        "messages": "{sent} / {limit} رسالة",
+        "resetHint": "يتم إعادة التعيين في الأول من الشهر القادم.",
+        "unlimited": "غير محدود"
+      },
+      "limits": {
+        "members": "أعضاء الفريق",
+        "contacts": "إجمالي جهات الاتصال"
+      },
+      "actions": {
+        "title": "إجراءات سريعة",
+        "contactSupport": "الاتصال بالدعم",
+        "viewPro": "عرض مزايا برو"
+      },
+      "history": {
+        "title": "نشاط الفواتير",
+        "date": "التاريخ",
+        "event": "الحدث",
+        "details": "التفاصيل",
+        "noActivity": "لم يتم تسجيل أي نشاط فواتير بعد.",
+        "events": {
+          "TRIAL_STARTED": "مرحباً بك في الفترة التجريبية Plus!",
+          "LIMIT_REACHED": "تم الاقتراب من حد الاستخدام.",
+          "PLAN_CHANGED": "تم التغيير إلى خطة {plan}."
+        }
+      },
+      "plans": {
+        "title": "الخطط المتاحة",
+        "description": "قم بتغيير الخطط في أي وقت لفتح ميزات جديدة وحدود أعلى.",
+        "current": "نشط حالياً",
+        "upgrade": "ترقية إلى {plan}",
+        "downgrade": "تخفيض إلى {plan}",
+        "free": "مجاني",
+        "currency": "{currency} / شهرياً"
+      }
+    }
+  }
+}

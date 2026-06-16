@@ -108,7 +108,7 @@ model Organization {
   logo        String?
   createdAt   DateTime
   metadata    String?
-  plan        String?
+  plan        String?  @default("CORE")
   members     Member[]
   invitations Invitation[]
 

@@ -1,0 +1,270 @@
+{
+  "Settings": {
+    "menu": {
+      "profile": "Profile",
+      "security": "Security",
+      "notifications": "Notifications",
+      "theme": "Theme",
+      "organization": "Organization"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Update your profile data",
+      "form": {
+        "fullNameLabel": "Full Name",
+        "fullNamePlaceholder": "Joe Doe",
+        "emailLabel": "Email",
+        "emailPlaceholder": "domain@email.com",
+        "submitButton": "Update Profile",
+        "updateErrorToast": "Failed to update profile",
+        "emailUpdateErrorToast": "Failed to update your email"
+      },
+      "accounts": {
+        "title": "Accounts",
+        "description": "Manage all your accounts"
+      }
+    },
+    "security": {
+      "twoFactor": {
+        "title": "Two Factor Authentication",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "form": {
+          "passwordLabel": "Password",
+          "passwordPlaceholder": "••••••••••",
+          "disableButton": "Disable 2FA",
+          "enableButton": "Enable 2FA",
+          "disableError": "Failed to disable 2FA",
+          "disableSuccess": "2FA is disabled",
+          "enableError": "Failed to enable 2FA",
+          "verifyError": "Failed to verify code",
+          "qrDescription": "Scan this QR code with authenticator app and enter the code below:",
+          "codeLabel": "Code",
+          "submitCodeButton": "Submit Code",
+          "backupCodesDescription": "Save these backup codes in a safe place. You can use them to access your account.",
+          "doneButton": "Done"
+        }
+      },
+      "sessions": {
+        "title": "Sessions",
+        "description": "Manage all your sessions",
+        "otherActiveSessionsTitle": "Other Active Sessions",
+        "revokeAllButton": "Revoke All Other Sessions",
+        "revokeSuccessToast": "Other Sessions Revoked Successfully",
+        "noOtherSessions": "No other Active session",
+        "unknownDevice": "Unknown Device",
+        "currentSession": "Current Session",
+        "created": "Created:",
+        "expires": "Expires:",
+        "revokeSessionToast": "Session Revoked"
+      },
+      "changePassword": {
+        "title": "Change Password",
+        "description": "Update your password for improved security.",
+        "form": {
+          "currentPasswordLabel": "Current Password",
+          "currentPasswordPlaceholder": "••••••••••",
+          "newPasswordLabel": "New Password",
+          "newPasswordPlaceholder": "••••••••••",
+          "newPasswordConfirmLabel": "New Password Confirm",
+          "newPasswordConfirmPlaceholder": "••••••••••",
+          "revokeOtherSessionsLabel": "Logout From other session",
+          "submitButton": "Change Password",
+          "loadingToast": "Changing Password...",
+          "errorToast": "Failed to change password",
+          "successToast": "Password Changed Successfully"
+        }
+      },
+      "dangerZone": {
+        "title": "Danger Zone",
+        "description": "All Actions in this section can't be reverted",
+        "deleteProfile": {
+          "title": "Delete Profile",
+          "description": "Permanently delete your profile data",
+          "button": "Delete",
+          "confirmTitle": "Delete Account",
+          "confirmText": "Delete"
+        }
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "Configure how you receive notifications and alerts across multiple channels.",
+      "form": {
+        "successToast": "Preferences updated",
+        "successToastDescription": "Your notification settings have been saved.",
+        "updateErrorToast": "Failed to update notification settings",
+        "broadcastSuccessToast": "Broadcast test triggered for {targets} users!",
+        "broadcastSuccessToastDescription": "If Firebase config is set, push notifications are transmitting now.",
+        "broadcastErrorToast": "Failed to broadcast notification.",
+        "systemPushTest": {
+          "title": "System Push Test",
+          "description": "Send a live test notification to all users in your current workspace.",
+          "button": "Broadcast Test"
+        },
+        "permissionDisabled": {
+          "title": "Notifications Disabled",
+          "description": "To receive live in-app alerts and background push notifications, you must grant permission in your browser."
+        },
+        "permissionDeniedToast": "Permission denied",
+        "permissionDeniedDescription": "You must unblock notifications in your browser settings.",
+        "enableNotificationsButton": "Enable Notifications"
+      }
+    },
+    "members": {
+      "title": "Team Management",
+      "description": "Manage your organization's team, roles and handle invitations.",
+      "activeMembers": "Active Members",
+      "pendingInvitations": "Pending Invitations",
+      "member": "Member",
+      "role": "Role",
+      "status": "Status",
+      "actions": "Actions",
+      "recipient": "Recipient",
+      "assignedRole": "Assigned Role",
+      "manage": "Manage",
+      "you": "(You)",
+      "active": "Active",
+      "pending": "Pending",
+      "protected": "Protected",
+      "memberSettings": "Member Settings",
+      "changeRole": "Change Role",
+      "removeMember": "Remove Member",
+      "copyLink": "Copy Link",
+      "cancel": "Cancel",
+      "orgStatistics": "Org Statistics",
+      "plan": "Plan",
+      "upgradeWorkspace": "Upgrade Workspace",
+      "proTip": "Pro-Tip 💡",
+      "proTipDescription": "Inviting members directly as Admins gives them permission to handle billing and add other members.",
+      "seatUsage": "Seat Usage",
+      "seatsRemaining": "seats remaining",
+      "seatRemaining": "seat remaining",
+      "organizationFull": "Organization is full. Upgrade to add more members.",
+      "inviteMember": "Invite Member",
+      "inviteTeamMember": "Invite Team Member",
+      "inviteDescription": "Grow your team and collaborate on projects together.",
+      "emailAddress": "Email Address",
+      "emailPlaceholder": "colleague@company.com",
+      "emailDescription": "They'll receive an invitation details on the next step.",
+      "accountRole": "Account Role",
+      "selectRole": "Select a role...",
+      "roleDescription": "Admins can manage team members and billing, but cannot delete the organization. Members have standard access to tools and data.",
+      "permissionsNote": "Permissions Note",
+      "permissionsDescription": "Configure what this member can access within the organization.",
+      "sendInvitation": "Send Invitation",
+      "sendInvite": "Send Invite",
+      "invitationReady": "Invitation Ready!",
+      "invitationReadyDescription": "Copy and send this link to",
+      "linkExpires": "This link will expire in 48 hours for security.",
+      "done": "Done",
+      "copyLinkToast": "Invitation link copied to clipboard!",
+      "copyLinkError": "Failed to copy link",
+      "cancelInvitation": "Cancel Invitation",
+      "cancelInvitationConfirm": "Cancel Invitation?",
+      "cancelInvitationDescription": "This will invalidate the link sent to",
+      "removeMemberConfirm": "Remove",
+      "removeMemberDescription": "This will permanently remove",
+      "fromOrganization": "from the organization. They will lose access immediately.",
+      "confirmRemoveMember": "Remove Member",
+      "roles": {
+        "owner": "Owner",
+        "admin": "Admin",
+        "member": "Member"
+      }
+    },
+    "theme": {
+      "title": "Theme Configuration",
+      "description": "Choose your preferred theme"
+    },
+    "organization": {
+      "generalTitle": "General Settings",
+      "generalDescription": "Manage your workspace identity and core configuration.",
+      "organizationIdLabel": "Organization ID:",
+      "form": {
+        "generalInfoTitle": "General Information",
+        "generalInfoDescription": "Customize your organization name and visibility.",
+        "organizationNameLabel": "Organization Name",
+        "organizationSlugLabel": "Organization Slug",
+        "organizationSlugDescription": "Slugs cannot be changed for now.",
+        "organizationLogoTitle": "Workspace Logo",
+        "organizationLogoSectionTitle": "Organization Logo",
+        "organizationLogoDescription": "Initials-based avatars are used by default.",
+        "uploadLogoButton": "Upload Custom Logo (Coming Soon)",
+        "cancelButton": "Cancel",
+        "saveChangesButton": "Save Changes"
+      },
+      "dangerZone": {
+        "title": "Danger Zone",
+        "description": "These actions are irreversible and will affect your organization.",
+        "archiveToast": "Coming soon: Organization Archiving",
+        "archive": {
+          "title": "Archive Organization",
+          "description": "Archiving will disable access to this organization and all its data. This action can be reversed by contacting support.",
+          "button": "Archive Organization"
+        },
+        "delete": {
+          "title": "Delete Organization",
+          "description": "This will permanently delete your organization and all its data. This action cannot be undone.",
+          "button": "Delete Organization",
+          "confirmTitle": "Delete Organization",
+          "confirmDescription": "Delete",
+          "cancelText": "Cancel",
+          "confirmText": "Delete"
+        }
+      }
+    },
+    "billing": {
+      "title": "Billing & Subscription",
+      "description": "Manage your plan, usage, and billing history.",
+      "overview": "Subscription Overview",
+      "status": {
+        "trial": "Trial",
+        "active": "Active",
+        "expired": "Expired",
+        "cancelled": "Cancelled",
+        "suspended": "Suspended"
+      },
+      "planDetails": "Your workspace is currently on the {plan} tier.",
+      "renewal": "Next Renewal",
+      "monthly": "Monthly",
+      "trialRemaining": "{days} days left in your trial",
+      "usage": {
+        "title": "Monthly Broadcast Usage",
+        "messages": "{sent} / {limit} messages",
+        "resetHint": "Resetting on the 1st of next month.",
+        "unlimited": "Unlimited"
+      },
+      "limits": {
+        "members": "Team Members",
+        "contacts": "Total Contacts"
+      },
+      "actions": {
+        "title": "Quick Actions",
+        "contactSupport": "Contact Support",
+        "viewPro": "View Pro Benefits"
+      },
+      "history": {
+        "title": "Billing Activity",
+        "date": "Date",
+        "event": "Event",
+        "details": "Details",
+        "noActivity": "No billing activity recorded yet.",
+        "events": {
+          "TRIAL_STARTED": "Welcome to the Plus Trial!",
+          "LIMIT_REACHED": "Usage limit has been approached.",
+          "PLAN_CHANGED": "Switched to {plan} plan."
+        }
+      },
+      "plans": {
+        "title": "Available Plans",
+        "description": "Switch plans at any time to unlock new features and higher limits.",
+        "current": "Currently Active",
+        "upgrade": "Upgrade to {plan}",
+        "downgrade": "Downgrade to {plan}",
+        "free": "Free",
+        "currency": "{currency} / month"
+      }
+    }
+  }
+}
