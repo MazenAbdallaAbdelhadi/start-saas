@@ -1,9 +1,17 @@
-import { ModeToggle } from "@/components/mode-toggle";
+import CallToAction from "@/components/marketing/call-to-action";
+import FAQsTwo from "@/components/marketing/faqs";
+import Features from "@/components/marketing/features";
+import Pricing from "@/components/marketing/pricing";
+import Testimonials from "@/components/marketing/testimonials";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      <ModeToggle />
-    </div>
+    <>
+      <Features />
+      <Testimonials />
+      <Pricing />
+      <FAQsTwo />
+      <CallToAction />
+    </>
   );
 }
